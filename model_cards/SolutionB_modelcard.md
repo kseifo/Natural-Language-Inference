@@ -35,6 +35,7 @@ The decomposable attention model's architecture involves three main steps: Atten
 <!-- Provide links where applicable. -->
 
 - **Paper or documentation:** https://arxiv.org/abs/1606.01933
+- **Embeddings Repository:** https://huggingface.co/microsoft/deberta-v3-base
 
 ## Training Details
 
