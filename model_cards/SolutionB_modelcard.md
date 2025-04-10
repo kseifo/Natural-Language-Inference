@@ -42,7 +42,7 @@ The decomposable attention model's architecture involves three main steps: Atten
 
 <!-- This is a short stub of information on the training data that was used, and documentation related to data pre-processing or additional filtering (if applicable). -->
 
-A development set amounting to 6,736 pairs of texts provided by the COMP34812 Team, with each pair including a hypothesis, a premise, and a prediction column.
+The training data consists of 24,432 pairs of texts provided by the COMP34812 Team, with each pair including a hypothesis, a premise, and a prediction column. The prediction column indicates whether the hypothesis is entailed by the premise.
 
 ### Training Procedure
 
@@ -66,7 +66,7 @@ A development set amounting to 6,736 pairs of texts provided by the COMP34812 Te
 <!-- This section provides information about how roughly how long it takes to train the model and the size of the resulting model. -->
 
 
-      - overall training time: 15
+      - overall training time: 15 minutes
       - duration per training epoch: 1 minute
       - model size: 28MB
 
@@ -80,7 +80,8 @@ A development set amounting to 6,736 pairs of texts provided by the COMP34812 Te
 
 <!-- This should describe any evaluation data used (e.g., the development/validation set provided). -->
 
-The training data consists of 24,432 pairs of texts provided by the COMP34812 Team, with each pair including a hypothesis, a premise, and a prediction column. The prediction column indicates whether the hypothesis is entailed by the premise.
+A development set amounting to 6,736 pairs of texts provided by the COMP34812 Team, with each pair including a hypothesis, a premise, and a prediction column.
+
 
 #### Metrics
 
@@ -134,8 +135,11 @@ The model achieved an overall accuracy of 81.05% on the augmented dataset. Class
 
 <!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-Any inputs (concatenation of two sequences) longer than
-      128 subwords will be truncated by the model.
+- **Input Length:**  
+  Any inputs (concatenation of two sequences) longer than 128 subwords will be truncated by the model.
+
+- **Handling Class Imbalance:**  
+  If you decide to re-train the model on a different dataset, make sure to use the `calculate_normalized_class_weights()` function to compute class weights. This will help address any imbalances in the dataset by ensuring that underrepresented classes receive appropriate emphasis during training.
 
 ## Additional Information
 
